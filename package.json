@@ -1,6 +1,7 @@
 {
 	"name": "@develatio/react-diagrams",
-	"author": "dylanvorster",
+  "author": "dylanvorster",
+  "version": "6.3.0",
 	"private": true,
 	"repository": {
 		"type": "git",

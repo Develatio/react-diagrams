@@ -3,8 +3,8 @@ import { DefaultLinkModel } from './DefaultLinkModel';
 import { DefaultLinkWidget } from './DefaultLinkWidget';
 import styled from '@emotion/styled';
 import { css, keyframes } from '@emotion/core';
-import { AbstractReactFactory } from '@projectstorm/react-canvas-core';
-import { DiagramEngine } from '@projectstorm/react-diagrams-core';
+import { AbstractReactFactory } from '@develatio/react-canvas-core';
+import { DiagramEngine } from '@develatio/react-diagrams-core';
 
 namespace S {
 	export const Keyframes = keyframes`

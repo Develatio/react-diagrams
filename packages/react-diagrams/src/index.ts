@@ -3,19 +3,19 @@ import {
 	DiagramEngine,
 	LinkLayerFactory,
 	NodeLayerFactory
-} from '@projectstorm/react-diagrams-core';
+} from '@develatio/react-diagrams-core';
 import {
 	DefaultLabelFactory,
 	DefaultLinkFactory,
 	DefaultNodeFactory,
 	DefaultPortFactory
-} from '@projectstorm/react-diagrams-defaults';
-import { PathFindingLinkFactory } from '@projectstorm/react-diagrams-routing';
-import { SelectionBoxLayerFactory, CanvasEngineOptions } from '@projectstorm/react-canvas-core';
+} from '@develatio/react-diagrams-defaults';
+import { PathFindingLinkFactory } from '@develatio/react-diagrams-routing';
+import { SelectionBoxLayerFactory, CanvasEngineOptions } from '@develatio/react-canvas-core';
 
-export * from '@projectstorm/react-diagrams-core';
-export * from '@projectstorm/react-diagrams-defaults';
-export * from '@projectstorm/react-diagrams-routing';
+export * from '@develatio/react-diagrams-core';
+export * from '@develatio/react-diagrams-defaults';
+export * from '@develatio/react-diagrams-routing';
 
 /**
  * Construct an engine with the defaults installed

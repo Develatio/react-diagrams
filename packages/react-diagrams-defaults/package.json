@@ -1,5 +1,5 @@
 {
-	"name": "@projectstorm/react-diagrams-defaults",
+	"name": "@develatio/react-diagrams-defaults",
 	"version": "6.3.0",
 	"author": "dylanvorster",
 	"license": "MIT",
@@ -31,7 +31,7 @@
 	"module": "./dist/es/index.js",
 	"typings": "./dist/@types/index",
 	"dependencies": {
-		"@projectstorm/react-diagrams-core": "^6.3.0"
+		"@develatio/react-diagrams-core": "^6.3.0"
 	},
 	"peerDependencies": {
 		"@emotion/core": "^10.*",

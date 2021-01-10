@@ -1,5 +1,5 @@
 {
-	"name": "@projectstorm/react-diagrams-core",
+	"name": "@develatio/react-diagrams-core",
 	"version": "6.3.0",
 	"author": "dylanvorster",
 	"license": "MIT",
@@ -31,8 +31,8 @@
 	"module": "./dist/es/index.js",
 	"typings": "./dist/@types/index",
 	"dependencies": {
-		"@projectstorm/geometry": "^6.3.0",
-		"@projectstorm/react-canvas-core": "^6.3.0"
+		"@develatio/geometry": "^6.3.0",
+		"@develatio/react-canvas-core": "^6.3.0"
 	},
 	"peerDependencies": {
 		"closest": "^0.0.1",

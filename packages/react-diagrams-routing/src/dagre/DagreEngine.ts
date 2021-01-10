@@ -1,8 +1,8 @@
-import { DiagramModel, PointModel } from '@projectstorm/react-diagrams-core';
+import { DiagramModel, PointModel } from '@develatio/react-diagrams-core';
 import * as dagre from 'dagre';
 import * as _ from 'lodash';
 import { GraphLabel } from 'dagre';
-import { Point } from '@projectstorm/geometry';
+import { Point } from '@develatio/geometry';
 
 export interface DagreEngineOptions {
 	graph?: GraphLabel;

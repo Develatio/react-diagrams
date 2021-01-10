@@ -1,6 +1,6 @@
 import * as React from 'react';
-import createEngine, { DiagramModel, DefaultNodeModel, DefaultLinkModel } from '@projectstorm/react-diagrams';
-import { CanvasWidget, DeleteItemsAction } from '@projectstorm/react-canvas-core';
+import createEngine, { DiagramModel, DefaultNodeModel, DefaultLinkModel } from '@develatio/react-diagrams';
+import { CanvasWidget, DeleteItemsAction } from '@develatio/react-canvas-core';
 import { DemoCanvasWidget } from '../helpers/DemoCanvasWidget';
 
 export default () => {

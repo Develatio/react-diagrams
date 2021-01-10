@@ -3,7 +3,7 @@ import { storiesOf, addParameters, addDecorator } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 import { themes } from '@storybook/theming';
 import './demos/helpers/index.css';
-import { Toolkit } from '@projectstorm/react-canvas-core';
+import { Toolkit } from '@develatio/react-canvas-core';
 
 Toolkit.TESTING = true;
 

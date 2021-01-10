@@ -1,7 +1,7 @@
-import { DefaultLinkModel, DefaultLinkModelOptions } from '@projectstorm/react-diagrams-defaults';
+import { DefaultLinkModel, DefaultLinkModelOptions } from '@develatio/react-diagrams-defaults';
 import { RightAngleLinkFactory } from './RightAngleLinkFactory';
-import { PointModel } from '@projectstorm/react-diagrams-core';
-import { DeserializeEvent } from '@projectstorm/react-canvas-core';
+import { PointModel } from '@develatio/react-diagrams-core';
+import { DeserializeEvent } from '@develatio/react-canvas-core';
 
 export class RightAngleLinkModel extends DefaultLinkModel {
 	lastHoverIndexOfPath: number;

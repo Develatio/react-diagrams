@@ -62,7 +62,7 @@ export class BaseEntity<T extends BaseEntityGenerics = BaseEntityGenerics> exten
 		}
 		let clone = _.cloneDeep(this);
 		clone.options = {
-			...this.options,
+			...clone.options,
 			id: Toolkit.UID()
 		};
 		clone.clearListeners();

@@ -10,13 +10,13 @@ export class Polygon {
 	}
 
 	serialize() {
-		return _.map(this.points, (point) => {
+		return this.points.map((point) => {
 			return [point.x, point.y];
 		});
 	}
 
 	deserialize(data: any) {
-		this.points = _.map(data, (point) => {
+		this.points = data.map((point) => {
 			return new Point(point[0], point[1]);
 		});
 	}
@@ -53,7 +53,7 @@ export class Polygon {
 	}
 
 	doClone(ob: this) {
-		this.points = _.map(ob.points, (point) => {
+		this.points = ob.points.map((point) => {
 			return point.clone();
 		});
 	}

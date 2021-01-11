@@ -19,7 +19,7 @@ export class NodeLayerWidget extends React.Component<NodeLayerWidgetProps> {
 	render() {
 		return (
 			<>
-				{_.map(this.props.layer.getNodes(), (node: NodeModel) => {
+				{Object.values(this.props.layer.getNodes()).map((node: NodeModel) => {
 					return <NodeWidget key={node.getID()} diagramEngine={this.props.engine} node={node} />;
 				})}
 			</>

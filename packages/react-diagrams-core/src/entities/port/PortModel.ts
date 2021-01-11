@@ -64,7 +64,7 @@ export class PortModel<G extends PortModelGenerics = PortModelGenerics> extends 
 			name: this.options.name,
 			alignment: this.options.alignment,
 			parentNode: this.parent.getID(),
-			links: _.map(this.links, (link) => {
+			links: Object.values(this.links).map((link) => {
 				return link.getID();
 			})
 		};

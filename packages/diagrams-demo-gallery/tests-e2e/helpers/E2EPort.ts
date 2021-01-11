@@ -20,7 +20,7 @@ export class E2EPort extends E2EBase {
 			return [];
 		}
 
-		return _.map(attribute.split(','), (id) => {
+		return attribute.split(',').map((id) => {
 			const e = new E2ELink(id);
 			e.isID = true;
 			return e;
@@ -28,7 +28,7 @@ export class E2EPort extends E2EBase {
 	}
 
 	async link(port: E2EPort): Promise<E2ELink> {
-		let currentLinks = _.map(await this.getLinks(), 'name');
+		let currentLinks = (await this.getLinks()).map((link) => link.name);
 
 		let bounds = await (await this.getElement()).boundingBox();
 
@@ -42,7 +42,7 @@ export class E2EPort extends E2EBase {
 		page.mouse.move(bounds2.x, bounds2.y);
 		page.mouse.up();
 
-		let newLinks = _.map(await this.getLinks(), 'name');
+		let newLinks = (await this.getLinks()).map((link) => link.name);
 
 		const s = new E2ELink(_.difference(newLinks, currentLinks)[0]);
 		s.isID = true;
@@ -50,7 +50,7 @@ export class E2EPort extends E2EBase {
 	}
 
 	async linkToPoint(x: number, y: number): Promise<E2ELink> {
-		let currentLinks = _.map(await this.getLinks(), 'id');
+		let currentLinks = (await this.getLinks()).map((link) => link.id);
 
 		let bounds = await (await this.getElement()).boundingBox();
 
@@ -62,7 +62,7 @@ export class E2EPort extends E2EBase {
 		page.mouse.move(x, y);
 		page.mouse.up();
 
-		let newLinks = _.map(await this.getLinks(), 'id');
+		let newLinks = (await this.getLinks()).map((link) => link.id);
 
 		const link = _.difference(newLinks, currentLinks)[0];
 		if (!link) {

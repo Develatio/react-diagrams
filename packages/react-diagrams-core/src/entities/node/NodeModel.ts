@@ -70,7 +70,7 @@ export class NodeModel<G extends NodeModelGenerics = NodeModelGenerics> extends 
 	serialize() {
 		return {
 			...super.serialize(),
-			ports: _.map(this.ports, (port) => {
+			ports: Object.values(this.ports).map((port) => {
 				return port.serialize();
 			})
 		};

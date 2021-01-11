@@ -74,8 +74,8 @@ export class DefaultNodeWidget extends React.Component<DefaultNodeProps> {
 					<S.TitleName>{this.props.node.getOptions().name}</S.TitleName>
 				</S.Title>
 				<S.Ports>
-					<S.PortsContainer>{_.map(this.props.node.getInPorts(), this.generatePort)}</S.PortsContainer>
-					<S.PortsContainer>{_.map(this.props.node.getOutPorts(), this.generatePort)}</S.PortsContainer>
+					<S.PortsContainer>{this.props.node.getInPorts().map(this.generatePort)}</S.PortsContainer>
+					<S.PortsContainer>{this.props.node.getOutPorts().map(this.generatePort)}</S.PortsContainer>
 				</S.Ports>
 			</S.Node>
 		);

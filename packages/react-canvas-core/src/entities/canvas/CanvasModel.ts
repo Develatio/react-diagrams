@@ -163,7 +163,7 @@ export class CanvasModel<G extends CanvasModelGenerics = CanvasModelGenerics> ex
 			offsetY: this.options.offsetY,
 			zoom: this.options.zoom,
 			gridSize: this.options.gridSize,
-			layers: _.map(this.layers, (layer) => {
+			layers: this.layers.map((layer) => {
 				return layer.serialize();
 			})
 		};

@@ -53,7 +53,7 @@ export class LinkModel<G extends LinkModelGenerics = LinkModelGenerics> extends 
 
 	getBoundingBox(): Rectangle {
 		return Polygon.boundingBoxFromPoints(
-			_.map(this.points, (point: PointModel) => {
+			this.points.map((point: PointModel) => {
 				return point.getPosition();
 			})
 		);
@@ -76,7 +76,7 @@ export class LinkModel<G extends LinkModelGenerics = LinkModelGenerics> extends 
 
 	deserialize(event: DeserializeEvent<this>) {
 		super.deserialize(event);
-		this.points = _.map(event.data.points || [], (point) => {
+		this.points = (event.data.points || []).map((point) => {
 			var p = new PointModel({
 				link: this,
 				position: new Point(point.x, point.y)
@@ -127,10 +127,10 @@ export class LinkModel<G extends LinkModelGenerics = LinkModelGenerics> extends 
 			sourcePort: this.sourcePort ? this.sourcePort.getID() : null,
 			target: this.targetPort ? this.targetPort.getParent().getID() : null,
 			targetPort: this.targetPort ? this.targetPort.getID() : null,
-			points: _.map(this.points, (point) => {
+			points: this.points.map((point) => {
 				return point.serialize();
 			}),
-			labels: _.map(this.labels, (label) => {
+			labels: this.labels.map((label) => {
 				return label.serialize();
 			})
 		};
@@ -138,7 +138,7 @@ export class LinkModel<G extends LinkModelGenerics = LinkModelGenerics> extends 
 
 	doClone(lookupTable = {}, clone) {
 		clone.setPoints(
-			_.map(this.getPoints(), (point: PointModel) => {
+			this.getPoints().map((point: PointModel) => {
 				return point.clone(lookupTable);
 			})
 		);

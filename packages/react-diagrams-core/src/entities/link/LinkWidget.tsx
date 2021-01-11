@@ -107,7 +107,7 @@ export class LinkWidget extends React.Component<LinkProps, LinkState> {
 					return (
 						<g data-linkid={this.props.link.getID()}>
 							{this.props.diagramEngine.generateWidgetForLink(link)}
-							{_.map(this.props.link.getLabels(), (labelModel, index) => {
+							{this.props.link.getLabels().map((labelModel, index) => {
 								return (
 									<LabelWidget
 										key={labelModel.getID()}

@@ -49,15 +49,11 @@ export class DiagramModel<G extends DiagramModelGenerics = DiagramModelGenerics>
 	}
 
 	getLinkLayers(): LinkLayerModel[] {
-		return _.filter(this.layers, (layer) => {
-			return layer instanceof LinkLayerModel;
-		}) as LinkLayerModel[];
+		return this.layers.filter((layer) => layer instanceof LinkLayerModel) as LinkLayerModel[];
 	}
 
 	getNodeLayers(): NodeLayerModel[] {
-		return _.filter(this.layers, (layer) => {
-			return layer instanceof NodeLayerModel;
-		}) as NodeLayerModel[];
+		return this.layers.filter((layer) => layer instanceof NodeLayerModel) as NodeLayerModel[];
 	}
 
 	getActiveNodeLayer(): NodeLayerModel {

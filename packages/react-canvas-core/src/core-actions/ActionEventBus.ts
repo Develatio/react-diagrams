@@ -33,9 +33,9 @@ export class ActionEventBus {
 	}
 
 	getActionsForType(type: InputType): Action[] {
-		return _.filter(this.actions, (action) => {
-			return action.options.type === type;
-		});
+		return Object.entries(
+			this.actions
+		).filter(([_, value]) => value.options.type === type).map(([_, value]) => value);
 	}
 
 	getModelForEvent(actionEvent: ActionEvent<MouseEvent>): BaseModel {

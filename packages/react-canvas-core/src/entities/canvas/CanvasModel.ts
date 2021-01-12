@@ -53,9 +53,7 @@ export class CanvasModel<G extends CanvasModelGenerics = CanvasModelGenerics> ex
 	}
 
 	getSelectedEntities(): BaseModel[] {
-		return _.filter(this.getSelectionEntities(), (ob) => {
-			return ob.isSelected();
-		});
+		return this.getSelectionEntities().filter((ob) => ob.isSelected());
 	}
 
 	clearSelection() {

@@ -54,9 +54,9 @@ export abstract class LayerModel<G extends LayerModelGenerics = LayerModelGeneri
 			...super.serialize(),
 			isSvg: this.options.isSvg,
 			transformed: this.options.transformed,
-			models: _.mapValues(this.models, (model) => {
-				return model.serialize();
-			})
+			models: Object.fromEntries(
+				Object.entries(this.models).map(([key, model]) => [key, model.serialize()])
+			),
 		};
 	}
 

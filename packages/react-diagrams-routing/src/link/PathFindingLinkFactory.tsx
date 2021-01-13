@@ -195,7 +195,7 @@ export class PathFindingLinkFactory extends DefaultLinkFactory<PathFindingLinkMo
 			height: 0
 		}));
 
-		const sumProps = (object, props) => _.reduce(props, (acc, prop) => acc + _.get(object, prop, 0), 0);
+		const sumProps = (object, props) => props.reduce((acc, prop) => acc + _.get(object, prop, 0), 0);
 
 		const canvas = this.engine.getCanvas() as HTMLDivElement;
 		const concatedCoords = _.concat(allNodesCoords, allPortsCoords, allPointsCoords);

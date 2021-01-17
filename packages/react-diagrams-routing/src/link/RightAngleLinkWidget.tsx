@@ -287,6 +287,6 @@ export class RightAngleLinkWidget extends React.Component<RightAngleLinkProps, R
 		}
 
 		this.refPaths = [];
-		return <g data-default-link-test={this.props.link.getOptions().testName}>{paths}</g>;
+		return <g>{paths}</g>;
 	}
 }

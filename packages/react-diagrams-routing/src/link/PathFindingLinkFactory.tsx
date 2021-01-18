@@ -3,7 +3,6 @@ import { DiagramEngine } from '@develatio/react-diagrams-core';
 import { PathFindingLinkModel } from './PathFindingLinkModel';
 import { PathFindingLinkWidget } from './PathFindingLinkWidget';
 import * as _ from 'lodash';
-import * as Path from 'paths-js/path';
 import { DefaultLinkFactory } from '@develatio/react-diagrams-defaults';
 import {
 	AbstractDisplacementState,
@@ -266,11 +265,20 @@ export class PathFindingLinkFactory extends DefaultLinkFactory<PathFindingLinkMo
 	};
 
 	generateDynamicPath(pathCoords: number[][]) {
-		let path = Path();
-		path = path.moveto(pathCoords[0][0] * this.ROUTING_SCALING_FACTOR, pathCoords[0][1] * this.ROUTING_SCALING_FACTOR);
+		let path = "";
+
+		const x1 = pathCoords[0][0] * this.ROUTING_SCALING_FACTOR;
+		const y1 = pathCoords[0][1] * this.ROUTING_SCALING_FACTOR;
+
+		path = `M ${x1} ${y1}`;
+
+		let xn, yn;
 		pathCoords.slice(1).forEach((coords) => {
-			path = path.lineto(coords[0] * this.ROUTING_SCALING_FACTOR, coords[1] * this.ROUTING_SCALING_FACTOR);
+			xn = coords[0] * this.ROUTING_SCALING_FACTOR;
+			yn = coords[1] * this.ROUTING_SCALING_FACTOR;
+			path = ` ${path} L ${xn} ${yn}`;
 		});
-		return path.print();
+
+		return path;
 	}
 }

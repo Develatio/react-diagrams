@@ -59,6 +59,7 @@ export class TransformLayerWidget extends React.Component<TransformLayerWidgetPr
 	}
 
 	render() {
+		// TODO: Fixme, I'm rendering at every mouse move / drag
 		if (this.props.layer.getOptions().isSvg) {
 			return <S.SvgLayer style={this.getTransformStyle()}>{this.props.children}</S.SvgLayer>;
 		}

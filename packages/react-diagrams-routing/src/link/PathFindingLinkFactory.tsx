@@ -273,6 +273,7 @@ export class PathFindingLinkFactory extends DefaultLinkFactory<PathFindingLinkMo
 		path = `M ${x1} ${y1}`;
 
 		let xn, yn;
+		// TODO: remove duplicate points
 		pathCoords.slice(1).forEach((coords) => {
 			xn = coords[0] * this.ROUTING_SCALING_FACTOR;
 			yn = coords[1] * this.ROUTING_SCALING_FACTOR;

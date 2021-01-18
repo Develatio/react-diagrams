@@ -264,21 +264,22 @@ export class PathFindingLinkFactory extends DefaultLinkFactory<PathFindingLinkMo
 		}
 	};
 
+	applyScalingFactorToPath(pathCoords: number[][]) {
+		return pathCoords.map((coords) => {
+			return [
+				coords[0] * this.ROUTING_SCALING_FACTOR,
+				coords[1] * this.ROUTING_SCALING_FACTOR,
+			];
+		});
+	}
+
 	generateDynamicPath(pathCoords: number[][]) {
 		let path = "";
 
-		const x1 = pathCoords[0][0] * this.ROUTING_SCALING_FACTOR;
-		const y1 = pathCoords[0][1] * this.ROUTING_SCALING_FACTOR;
+		path = `M ${pathCoords[0][0]} ${pathCoords[0][1]}`;
 
-		path = `M ${x1} ${y1}`;
-
-		let xn, yn;
-		// Remove duplicate points
-		pathCoords = Array.from(new Set(pathCoords.map(JSON.stringify)), JSON.parse);
 		pathCoords.slice(1).forEach((coords) => {
-			xn = coords[0] * this.ROUTING_SCALING_FACTOR;
-			yn = coords[1] * this.ROUTING_SCALING_FACTOR;
-			path = ` ${path} L ${xn} ${yn}`;
+			path = ` ${path} L ${coords[0]} ${coords[1]}`;
 		});
 
 		return path;
